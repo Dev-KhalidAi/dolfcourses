@@ -1,3 +1,7 @@
+* {
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode";
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -48,7 +52,7 @@ header {
   display: flex;
 }
 .course-container {
-  min-width: 30%;
+  min-width: 40%;
   background: white;
   border: solid 1px #cdcdcd;
   padding: 10px;
@@ -113,4 +117,103 @@ hr {
   margin-top: 10px;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.quiz-frame {
+  display: block;
+  background: #dedede;
+  padding: 40px;
+}
+
+.question {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  font-size: 20px;
+  color: #60636a;
+}
+
+.answers {
+  margin-top: 20px;
+  color: #666666;
+  width: 100%;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-top: 30px;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #75bb43;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+form {
+  position: relative;
+}
+
+form button {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  margin-top: 10px;
+  padding: 10px 20px 10px 20px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 2px 2px 0 0 rgb(0 0 0 / 10%);
+  font-size: 16px;
+  color: #888;
+}
+
+form button:hover {
+  color: white;
+  background: #75bb43;
 }

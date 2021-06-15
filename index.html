@@ -32,59 +32,126 @@
 
             <!-- The list container -->
             <div class="component-slider">
-                <h4 id="componenet"><i id = "icon1" class="far fa-file"></i> Component of Electrical Power System</h4>
+                <h4 id = "component" class="componenet"><i id = "icon1" class="far fa-file"></i> Component of Electrical Power System</h4>
 
                     <!-- Single video container -->
                     <ul id='classes-container'>
                         <li class="classes-title">
                             <i id ="play-icon" class="far fa-play-circle"></i>
-                            <div class="classes">Welcome!</div>
+                            <div  class="classes video">Welcome!</div>
                         </li>
 
                         <div class="vertical"></div>
                     
                         <li class="classes-title">
                             <i id="play-icon" class="far fa-play-circle"></i>
-                            <div class="classes">Module Learning Objectives</div>
+                            <div  class="classes video">Module Learning Objectives</div>
                         </li>
                         <div class="vertical"></div>
 
                         <li class="classes-title">
                             <i id="play-icon" class="far fa-play-circle"></i>
-                            <div class="classes">The Story of Electricity</div>
+                            <div  class="classes video">The Story of Electricity</div>
                         </li>
+
+                        <div class="vertical"></div>
+
+                        <li class="classes-title">
+                            <i id="play-icon" class="far fa-question-circle"></i>
+                            <div class="classes quiz">Quiz 1</div>
+                        </li>
+
+                        <div class="vertical"></div>
+                        
+                        <li class="classes-title">
+                            <i id="play-icon" class="far fa-play-circle"></i>
+                            <div class="classes video">The Story of Electricity</div>
+                        </li>
+                        
+                        <div class="vertical"></div>
+                        
+                        <li class="classes-title">
+                            <i id="play-icon" class="far fa-question-circle"></i>
+                            <div class="classes">Quiz 2</div>
+                        </li>
+                        <div class="vertical"></div>
+                        
+                        <li class="classes-title">
+                            <i id="play-icon" class="far fa-play-circle"></i>
+                            <div class="classes video">The Story of Electricity</div>
+                        </li>
+                        
+                        <div class="vertical"></div>
+                        
+                        <li class="classes-title">
+                            <i id="play-icon" class="far fa-question-circle"></i>
+                            <div class="classes quiz">Quiz 1</div>
+                        </li>
+
                     </ul>    
             </div>
 
             <div class="component-slider">
-                <h4 id="componenet"><i id="icon1" class="far fa-file"></i> Component of Electrical Power System</h4>
+                <h4 class="componenet"><i id="icon1" class="far fa-file"></i> Component of Electrical Power System</h4>
             
                 <!-- Single video container -->
                 <ul id='classes-container'>
                     <li class="classes-title">
                         <i id="play-icon" class="far fa-play-circle"></i>
-                        <div class="classes">Welcome!</div>
+                        <div class="classes video">Welcome!</div>
                     </li>
             
                     <div class="vertical"></div>
             
                     <li class="classes-title">
                         <i id="play-icon" class="far fa-play-circle"></i>
-                        <div class="classes">Module Learning Objectives</div>
+                        <div class="classes video">Module Learning Objectives</div>
                     </li>
 
                     <div class="vertical"></div>
             
                     <li class="classes-title">
                         <i id="play-icon" class="far fa-play-circle"></i>
-                        <div class="classes">The Story of Electricity</div>
+                        <div class="classes video">The Story of Electricity</div>
                     </li>
+
+
+
+                
                 </ul>
             </div>
         </div>
         <div class="inside-classes">
-            <iframe width="100%" height="700px" src="https://www.youtube.com/embed/TXfGj7CFbqs">
+            <iframe id = "video-frame" width="100%" height="400px" src="">
             </iframe>
+            <div class="quiz-frame">
+                <form action="#">
+                    <div class="question">Which of the following statements is correct for a three-phase system?</div>
+                    <div class="answers">
+                        <!-- <input type="radio" name ="answer" value = "worng"> <label for="">The power delivered to a three-phase load is pulasting in nature. </label><br>
+                        <input type="radio" name="answer" value="worng"> <label>Power per kilogram of metal from a three-phase machine is less a compared to a single-phase machine.</label> <br>
+                        <input type="radio" name="answer" value="correct"> <label>A three-phase machine does not require a starter. </label><br>
+                        <input type="radio" name="answer" value="worng"> <label>Mechanical vibrations in three-phase motors are more as compared to single phase motors. </label><br> -->
+                        <label class="container">The power delivered to a three-phase load is pulasting in nature.
+                            <input type="radio" checked="checked" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Power per kilogram of metal from a three-phase machine is less a compared to a single-phase machine.
+                            <input type="radio" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">A three-phase machine does not require a starter.
+                            <input type="radio" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Mechanical vibrations in three-phase motors are more as compared to single phase motors.
+                            <input type="radio" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <button class = "submit-quiz"type="submit">SUBMIT</button>
+                </form>
+            </div>
         </div>
         </div>
 
