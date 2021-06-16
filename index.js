@@ -30,16 +30,11 @@ for (var i = 0; i < quiz.length; i++) {
 }
 
 var quizFrame = document.querySelector(".quiz-frame");
+// When the page load the quiz frame set to hidden
+quizFrame.style.display = "none";
 
 // Flag to detect whether the component is close or open
 var bool = false;
-
-inputRadio = document.getElementsByClassName("input");
-var input = Array.prototype.slice.call(inputRadio);
-
-for (var i = 0; i < input.length; i++) {
-  input[i].addEventListener("click", openSubmit);
-}
 
 var numQuestion = 2;
 var currnetQuestion = 1;
@@ -65,6 +60,8 @@ var questionFull = {
   choice4: "The power delivered to a three-phase load is pulasting in nature.",
 };
 
+var question = document.querySelector(".question");
+
 function slider(index) {
   var parent = index.target.parentElement;
   var child = parent.children[1];
@@ -87,35 +84,59 @@ function fillQuiz() {
   videoPath.style.display = "none";
   quizFrame.style.display = "";
 
-  var questiobDiv = document.createElement("div");
-  questiobDiv.className = "question";
-  questiobDiv.innerHTML = questionFull.question;
-  quizForm.appendChild(questiobDiv);
+  // var questiobDiv = document.createElement("div");
+  // questiobDiv.className = "question";
+  // questiobDiv.innerHTML = questionFull.question;
+  // quizForm.appendChild(questiobDiv);
 
-  var answerDiv = document.createElement("div");
-  answerDiv.className = "answers";
-  questiobDiv.appendChild(answerDiv);
+  // var answerDiv = document.createElement("div");
+  // answerDiv.className = "answers";
+  // questiobDiv.appendChild(answerDiv);
 
-  var answerLabel = document.createElement("label");
-  answerLabel.className = "container";
-  answerLabel.innerHTML = questionFull.choice1;
+  // var answerLabel = document.createElement("label");
+  // answerLabel.className = "container";
+  // answerLabel.innerHTML = questionFull.choice1;
 
-  var answerInput = document.createElement("input");
-  answerInput.className = "input";
-  answerInput.type = "radio";
-  answerInput.name = "radio";
-  answerLabel.appendChild(answerInput);
-  var answerSpan = document.createElement("span");
-  answerSpan.className = "checkmark";
-  answerLabel.appendChild(answerSpan);
-  answerDiv.appendChild(answerLabel);
+  // var answerInput = document.createElement("input");
+  // answerInput.className = "input";
+  // answerInput.type = "radio";
+  // answerInput.name = "radio";
+  // answerLabel.appendChild(answerInput);
+  // var answerSpan = document.createElement("span");
+  // answerSpan.className = "checkmark";
+  // answerLabel.appendChild(answerSpan);
+  // answerDiv.appendChild(answerLabel);
 
-  var submitButton = document.createElement("button");
-  submitButton.className = "submit-quiz";
-  submitButton.id = "submit-button";
-  submitButton.innerHTML = "SUBMIT";
-  quizForm.appendChild(submitButton);
-  document.getElementById("submit-button").disabled = false;
+  // var submitButton = document.createElement("button");
+  // submitButton.className = "submit-quiz";
+  // submitButton.id = "submit-button";
+  // submitButton.innerHTML = "SUBMIT";
+  // quizForm.appendChild(submitButton);
+  // document.getElementById("submit-button").disabled = false;
+  question.innerHTML = questionFull.question;
+
+  var answers = document.getElementsByClassName("container");
+  var answer = Array.prototype.slice.call(answers);
+
+  answer[0].innerHTML =
+    questionFull.choice1 +
+    "<input class='input' type='radio' name='radio'><span class='checkmark'></span>";
+  answer[1].innerHTML =
+    questionFull.choice2 +
+    "<input class='input' type='radio' name='radio'><span class='checkmark'></span>";
+  answer[2].innerHTML =
+    questionFull.choice3 +
+    "<input class='input' type='radio' name='radio'><span class='checkmark'></span>";
+  answer[3].innerHTML =
+    questionFull.choice4 +
+    "<input class='input' type='radio' name='radio'><span class='checkmark'></span>";
+
+  inputRadio = document.getElementsByClassName("input");
+  var input = Array.prototype.slice.call(inputRadio);
+
+  for (var i = 0; i < input.length; i++) {
+    input[i].addEventListener("click", openSubmit);
+  }
 }
 
 function openSubmit() {
