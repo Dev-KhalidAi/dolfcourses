@@ -122,35 +122,42 @@
             </div>
         </div>
         <div class="inside-classes">
-            <iframe id = "video-frame" width="100%" height="400px" src="">
+            <iframe id = "video-frame" width="100%" height="100%" src="">
             </iframe>
             <div class="quiz-frame">
-                <form action="#">
-                    <div class="question">Which of the following statements is correct for a three-phase system?</div>
+                <form id="quiz-form" action="#">
+                    <!-- <div class="question">Which of the following statements is correct for a three-phase system?</div>
                     <div class="answers">
-                        <!-- <input type="radio" name ="answer" value = "worng"> <label for="">The power delivered to a three-phase load is pulasting in nature. </label><br>
-                        <input type="radio" name="answer" value="worng"> <label>Power per kilogram of metal from a three-phase machine is less a compared to a single-phase machine.</label> <br>
-                        <input type="radio" name="answer" value="correct"> <label>A three-phase machine does not require a starter. </label><br>
-                        <input type="radio" name="answer" value="worng"> <label>Mechanical vibrations in three-phase motors are more as compared to single phase motors. </label><br> -->
                         <label class="container">The power delivered to a three-phase load is pulasting in nature.
-                            <input type="radio" checked="checked" name="radio">
+                            <input class="input" type="radio" name="radio">
                             <span class="checkmark"></span>
                         </label>
                         <label class="container">Power per kilogram of metal from a three-phase machine is less a compared to a single-phase machine.
-                            <input type="radio" name="radio">
+                            <input class="input" type="radio" name="radio">
                             <span class="checkmark"></span>
                         </label>
                         <label class="container">A three-phase machine does not require a starter.
-                            <input type="radio" name="radio">
+                            <input class="input" type="radio" name="radio">
                             <span class="checkmark"></span>
                         </label>
                         <label class="container">Mechanical vibrations in three-phase motors are more as compared to single phase motors.
-                            <input type="radio" name="radio">
+                            <input class="input" type="radio" name="radio">
                             <span class="checkmark"></span>
                         </label>
-                    </div>
-                    <button class = "submit-quiz"type="submit">SUBMIT</button>
+                    </div> -->
+                    <!-- <button class = "submit-quiz"type="submit" id="submit-button"  disabled="none">SUBMIT</button> -->
                 </form>
+                <div class="next-container">
+                    <div class="left-circle">
+                    <button id="left"class="fas fa-chevron-circle-left"></button>
+                    </div>
+                    <div class="questions">
+                       
+                    </div>
+                    <div class="right-circle">
+                    <button id="right" class="fas fa-chevron-circle-right"></button>
+                    </div>
+                </div>
             </div>
         </div>
         </div>
