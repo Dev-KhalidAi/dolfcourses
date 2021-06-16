@@ -55,12 +55,32 @@ var questionFull = {
   question:
     "Which of the following statements is correct for a three-phase system?",
   choice1: "The power delivered to a three-phase load is pulasting in nature.",
-  choice2: "The power delivered to a three-phase load is pulasting in nature.",
-  choice3: "The power delivered to a three-phase load is pulasting in nature.",
-  choice4: "The power delivered to a three-phase load is pulasting in nature.",
+  choice2:
+    "Power per kilogram of metal from a three-phase machine is less as compared to a single-phase machine.",
+  choice3: "A three-phase machine does not require a starter.",
+  choice4:
+    "Mechanical vibration in three-phase motors are more as copmared to single phase motors.",
 };
 
 var question = document.querySelector(".question");
+var submitButton = document
+  .querySelector(".submit-quiz")
+  .addEventListener("click", submitAnswer);
+
+var showMessage = document.querySelector(".overlay");
+var hideMessage = document
+  .querySelector(".hide")
+  .addEventListener("click", hideMessage);
+
+var info = document.getElementsByClassName("info");
+var inf = Array.prototype.slice.call(info);
+
+// Add to each info event listenner
+for (var i = 0; i < inf.length; i++) {
+  inf[i].addEventListener("click", fillInfo);
+}
+
+var infoFrame = document.querySelector(".info-container");
 
 function slider(index) {
   var parent = index.target.parentElement;
@@ -77,12 +97,15 @@ function slider(index) {
 function fillVideo(index) {
   quizFrame.style.display = "none";
   videoPath.style.display = "";
+  infoFrame.style.display = "none";
+
   videoPath.src = videoSouce;
 }
 
 function fillQuiz() {
   videoPath.style.display = "none";
   quizFrame.style.display = "";
+  infoFrame.style.display = "none";
 
   // var questiobDiv = document.createElement("div");
   // questiobDiv.className = "question";
@@ -139,6 +162,8 @@ function fillQuiz() {
   }
 }
 
+var correctAnswer = document.querySelector(".overlay");
+
 function openSubmit() {
   document.getElementById("submit-button").disabled = false;
 }
@@ -157,4 +182,19 @@ function prevQuestion() {
     document.querySelector(".questions").innerHTML =
       " Question " + currnetQuestion + " / " + numQuestion;
   }
+}
+
+function submitAnswer() {
+  showMessage.style.display = "block";
+  document.querySelector(".submit-quiz").disabled = true;
+}
+
+function hideMessage() {
+  showMessage.style.display = "none";
+}
+
+function fillInfo() {
+  quizFrame.style.display = "none";
+  videoPath.style.display = "none";
+  infoFrame.style.display = "block";
 }

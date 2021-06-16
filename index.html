@@ -60,12 +60,21 @@
                             <i id="play-icon" class="far fa-question-circle"></i>
                             <div class="classes quiz">Quiz 1</div>
                         </li>
+                        
 
                         <div class="vertical"></div>
                         
                         <li class="classes-title">
                             <i id="play-icon" class="far fa-play-circle"></i>
                             <div class="classes video">The Story of Electricity</div>
+                        </li>
+                        
+                        <div class="vertical"></div>
+
+                        
+                        <li class="classes-title">
+                            <i id="play-icon" class="far fa-exclamation-circle"></i>
+                            <div class="classes info">Saudi Arabia Map</div>
                         </li>
                         
                         <div class="vertical"></div>
@@ -87,12 +96,11 @@
                             <i id="play-icon" class="far fa-question-circle"></i>
                             <div class="classes quiz">Quiz 1</div>
                         </li>
-
                     </ul>    
             </div>
 
             <div class="component-slider">
-                <h4 class="componenet"><i id="icon1" class="far fa-file"></i> Component of Electrical Power System</h4>
+                <h4 class="componenet"><i id="icon1" class="far fa-file"></i> Dummy to show concept</h4>
             
                 <!-- Single video container -->
                 <ul id='classes-container'>
@@ -115,9 +123,13 @@
                         <div class="classes video">The Story of Electricity</div>
                     </li>
 
+                    <div class="vertical"></div>
 
-
-                
+                    <li class="classes-title">
+                        <i id="play-icon" class="far fa-exclamation-circle"></i>
+                        <div class="classes info">Saudi Arabia Map</div>
+                    </li>
+                    
                 </ul>
             </div>
         </div>
@@ -133,7 +145,7 @@
                         <label class="container"></label>
                         <label class="container"></label>
                     </div>
-                    <button class = "submit-quiz" type="submit" id="submit-button"  disabled="none">SUBMIT</button>
+                    <button class = "submit-quiz" id="submit-button"  disabled="none">SUBMIT</button>
                 </form>
                 <div class="next-container">
                     <div class="left-circle">
@@ -146,6 +158,28 @@
                     <button id="right" class="fas fa-chevron-circle-right"></button>
                     </div>
                 </div>
+            </div>
+            <div class="info-container">
+                <div id = "info-title">This is an interactive map to view the generation systems across the Kingdom of Saudi Arabia</div>
+                <div class="buttons">
+                    <button class="button orange"> <i id = "orange" class="fas fa-map-marker-alt"></i> Steam</button>
+                    <button class="button red"> <i id = "red"  class="fas fa-map-marker-alt"></i> Steam</button>
+                    <button class="button blue"><i id = "blue"  class="fas fa-map-marker-alt"></i> Steam</button>
+                    <button class="button lightblue"><i id = "lightblue"  class="fas fa-map-marker-alt"></i> Steam</button>
+                    <button class="button green"><i id = "green"  class="fas fa-map-marker-alt"></i> Steam</button>
+                    <button class="button gray"><i id = "gray"  class="fas fa-map-marker-alt"></i> Steam</button>
+                </div>
+                <div class="info-image">
+                    <img id="map" src="./images/sa-03.png" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="overlay">
+            <div class="answer-messages">
+                <div class="hide">X</div>
+                <div id="correct" class="message">Correct</div>
+                <div class="message">Your message is correct, Good job!</div>
             </div>
         </div>
         </div>
