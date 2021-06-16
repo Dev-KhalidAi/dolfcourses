@@ -115,7 +115,6 @@ hr {
 .inside-classes {
   position: relative;
   width: 100%;
-  height: 500px;
   margin-top: 10px;
   margin-left: 20px;
   margin-right: 20px;
@@ -133,11 +132,6 @@ hr {
   background: rgba(0, 0, 0, 0.5); /* Black background with opacity */
   z-index: 5; /* Specify a stack order in case you're using a different order for other elements */
   display: none;
-  -webkit-transition: 3s;
-  -moz-transition: 3s;
-  -ms-transition: 3s;
-  -o-transition: 3s;
-  transition: 3s;
 }
 
 .hide {
@@ -352,6 +346,7 @@ form button[disabled] {
 .button {
   text-align: left;
   padding: 10px;
+
   border-radius: 10px;
   border: none;
   font-size: 14px;
