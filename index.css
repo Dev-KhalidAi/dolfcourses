@@ -7,11 +7,14 @@ body {
   margin: 0;
   font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode";
   background: #f1f1f1;
-  user-select: none; /* supported by Chrome and Opera */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+html {
+  overflow-y: scroll;
 }
 
 header {
@@ -57,6 +60,8 @@ header {
   border: solid 1px #cdcdcd;
   padding: 10px;
   height: fit-content;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .title-content {
@@ -140,6 +145,24 @@ hr {
   transition: 3s;
 }
 
+.overlay2 {
+  position: fixed;
+  display: inline-block;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  z-index: 5; /* Specify a stack order in case you're using a different order for other elements */
+  display: none;
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+}
+
 .hide {
   position: absolute;
   right: 0;
@@ -156,7 +179,7 @@ hr {
   text-align: center;
   top: 40%;
   left: 35%;
-  width: fit-content;
+  width: 300px;
   padding: 40px;
   border-radius: 15px;
   background-color: white;
@@ -164,6 +187,13 @@ hr {
 
 #correct {
   color: #57b643;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#incorrect {
+  color: #e56262;
   font-size: 25px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -421,4 +451,12 @@ form button[disabled] {
 
 .componenet {
   cursor: pointer;
+}
+
+.respond2 {
+  display: none;
+}
+
+.respond {
+  display: none;
 }

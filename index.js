@@ -67,7 +67,6 @@ var submitButton = document
   .querySelector(".submit-quiz")
   .addEventListener("click", submitAnswer);
 
-var showMessage = document.querySelector(".overlay");
 var hideMessage = document
   .querySelector(".hide")
   .addEventListener("click", hideMessage);
@@ -81,6 +80,12 @@ for (var i = 0; i < inf.length; i++) {
 }
 
 var infoFrame = document.querySelector(".info-container");
+
+var lockIcon = document
+  .querySelector(".lock-icon")
+  .addEventListener("click", addScroll);
+
+var scrollToggle = false;
 
 function slider(index) {
   var parent = index.target.parentElement;
@@ -143,26 +148,26 @@ function fillQuiz() {
 
   answer[0].innerHTML =
     questionFull.choice1 +
-    "<input class='input' type='radio' name='radio'><span class='checkmark'></span>";
+    "<input id = 'r1' class='input' value = 'false' type='radio' name='radio'><span class='checkmark'></span>";
   answer[1].innerHTML =
     questionFull.choice2 +
-    "<input class='input' type='radio' name='radio'><span class='checkmark'></span>";
+    "<input id = 'r2' class='input' value = 'false' type='radio' name='radio'><span class='checkmark'></span>";
   answer[2].innerHTML =
     questionFull.choice3 +
-    "<input class='input' type='radio' name='radio'><span class='checkmark'></span>";
+    "<input id = 'r3' class='input' value = 'Correct' type='radio' name='radio'><span class='checkmark'></span>";
   answer[3].innerHTML =
     questionFull.choice4 +
-    "<input class='input' type='radio' name='radio'><span class='checkmark'></span>";
+    "<input id = 'r4' class='input' value = 'false' type='radio' name='radio'><span class='checkmark'></span>";
 
   inputRadio = document.getElementsByClassName("input");
   var input = Array.prototype.slice.call(inputRadio);
+
+  document.querySelector(".quiz-frame").style.pointerEvents = "";
 
   for (var i = 0; i < input.length; i++) {
     input[i].addEventListener("click", openSubmit);
   }
 }
-
-var correctAnswer = document.querySelector(".overlay");
 
 function openSubmit() {
   document.getElementById("submit-button").disabled = false;
@@ -185,16 +190,42 @@ function prevQuestion() {
 }
 
 function submitAnswer() {
-  showMessage.style.display = "block";
+  // showMessage.style.display = "block";
   document.querySelector(".submit-quiz").disabled = true;
+
+  if (document.getElementById("r3").checked) {
+    document.querySelector(".overlay").style.display = "block";
+    document.querySelector(".respond").style.display = "block";
+    document.querySelector(".respond2").style.display = "none";
+    document.querySelector(".quiz-frame").style.pointerEvents = "none";
+  } else {
+    document.querySelector(".overlay").style.display = "block";
+    document.querySelector(".respond2").style.display = "block";
+    document.querySelector(".respond").style.display = "none";
+  }
 }
 
 function hideMessage() {
-  showMessage.style.display = "none";
+  document.querySelector(".overlay").style.display = "none";
 }
 
 function fillInfo() {
   quizFrame.style.display = "none";
   videoPath.style.display = "none";
   infoFrame.style.display = "block";
+}
+
+function addScroll() {
+  if (scrollToggle == false) {
+    document.querySelector(".course-container").style.height = "400px";
+    document.querySelector(".lock-icon").innerHTML =
+      "<i class='fas fa-lock-alt'></i>";
+
+    scrollToggle = true;
+  } else {
+    document.querySelector(".course-container").style.height = "fit-content";
+    document.querySelector(".lock-icon").innerHTML =
+      "<i class='fas fa-unlock-alt'></i>";
+    scrollToggle = false;
+  }
 }
