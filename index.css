@@ -375,7 +375,7 @@ form button[disabled] {
   grid-template-columns: 2fr 2fr;
   width: 70%;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 40px;
   gap: 10px;
 }
 
@@ -444,7 +444,7 @@ form button[disabled] {
 }
 
 #map {
-  margin: 0 auto;
+  margin-top: 50px;
   width: 500px;
   opacity: 0.5;
 }
@@ -458,5 +458,46 @@ form button[disabled] {
 }
 
 .respond {
+  display: none;
+}
+
+.hint-container {
+  display: flex;
+  width: 300px;
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin-left: 30px;
+}
+
+.texthint {
+  color: #019449;
+  margin-left: -20px;
+}
+.circle-info {
+  position: relative;
+  color: #019449;
+  right: 40px;
+  font-size: 40px;
+}
+
+#quiz-hint {
+  position: relative;
+  margin-left: auto;
+}
+
+.question-mark {
+  position: relative;
+  top: 35px;
+  right: 20px;
+  font-size: 70px;
+  color: #019449;
+}
+
+#quiz-form {
+  margin-top: -40px;
+}
+
+#loading-gif {
   display: none;
 }

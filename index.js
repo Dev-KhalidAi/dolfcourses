@@ -53,7 +53,7 @@ var quizForm = document.getElementById("quiz-form");
 
 var questionFull = {
   question:
-    "Which of the following statements is correct for a three-phase system?",
+    "Which of the following statements is correct for a three-phase system ?",
   choice1: "The power delivered to a three-phase load is pulasting in nature.",
   choice2:
     "Power per kilogram of metal from a three-phase machine is less as compared to a single-phase machine.",
@@ -100,6 +100,16 @@ function slider(index) {
 }
 
 function fillVideo(index) {
+  index.target.parentElement.children[1].style.display = "block";
+  index.target.parentElement.children[0].style.display = "none";
+
+  const loading = () => {
+    index.target.parentElement.children[1].style.display = "none";
+
+    index.target.parentElement.children[0].style.display = "block";
+  };
+  setTimeout(loading, 1000);
+
   quizFrame.style.display = "none";
   videoPath.style.display = "";
   infoFrame.style.display = "none";
@@ -107,40 +117,19 @@ function fillVideo(index) {
   videoPath.src = videoSouce;
 }
 
-function fillQuiz() {
+function fillQuiz(index) {
+  index.target.parentElement.children[1].style.display = "block";
+  index.target.parentElement.children[0].style.display = "none";
+
+  const loading = () => {
+    index.target.parentElement.children[1].style.display = "none";
+    index.target.parentElement.children[0].style.display = "block";
+  };
+  setTimeout(loading, 200);
   videoPath.style.display = "none";
   quizFrame.style.display = "";
   infoFrame.style.display = "none";
 
-  // var questiobDiv = document.createElement("div");
-  // questiobDiv.className = "question";
-  // questiobDiv.innerHTML = questionFull.question;
-  // quizForm.appendChild(questiobDiv);
-
-  // var answerDiv = document.createElement("div");
-  // answerDiv.className = "answers";
-  // questiobDiv.appendChild(answerDiv);
-
-  // var answerLabel = document.createElement("label");
-  // answerLabel.className = "container";
-  // answerLabel.innerHTML = questionFull.choice1;
-
-  // var answerInput = document.createElement("input");
-  // answerInput.className = "input";
-  // answerInput.type = "radio";
-  // answerInput.name = "radio";
-  // answerLabel.appendChild(answerInput);
-  // var answerSpan = document.createElement("span");
-  // answerSpan.className = "checkmark";
-  // answerLabel.appendChild(answerSpan);
-  // answerDiv.appendChild(answerLabel);
-
-  // var submitButton = document.createElement("button");
-  // submitButton.className = "submit-quiz";
-  // submitButton.id = "submit-button";
-  // submitButton.innerHTML = "SUBMIT";
-  // quizForm.appendChild(submitButton);
-  // document.getElementById("submit-button").disabled = false;
   question.innerHTML = questionFull.question;
 
   var answers = document.getElementsByClassName("container");
@@ -202,6 +191,7 @@ function submitAnswer() {
     document.querySelector(".overlay").style.display = "block";
     document.querySelector(".respond2").style.display = "block";
     document.querySelector(".respond").style.display = "none";
+    document.querySelector(".quiz-frame").style.pointerEvents = "none";
   }
 }
 
@@ -209,7 +199,14 @@ function hideMessage() {
   document.querySelector(".overlay").style.display = "none";
 }
 
-function fillInfo() {
+function fillInfo(index) {
+  index.target.parentElement.children[1].style.display = "block";
+  index.target.parentElement.children[0].style.display = "none";
+  const loading = () => {
+    index.target.parentElement.children[1].style.display = "none";
+    index.target.parentElement.children[0].style.display = "block";
+  };
+  setTimeout(loading, 200);
   quizFrame.style.display = "none";
   videoPath.style.display = "none";
   infoFrame.style.display = "block";
