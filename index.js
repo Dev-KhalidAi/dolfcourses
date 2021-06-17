@@ -87,6 +87,9 @@ var lockIcon = document
 
 var scrollToggle = false;
 
+videoPath.style.display = "";
+videoPath.src = videoSouce;
+
 function slider(index) {
   var parent = index.target.parentElement;
   var child = parent.children[1];

@@ -307,7 +307,7 @@ form button[disabled] {
 
 .next-container {
   display: flex;
-  margin-top: 80px;
+  margin-top: 40px;
   justify-content: center;
   align-items: center;
 }
@@ -500,4 +500,24 @@ form button[disabled] {
 
 #loading-gif {
   display: none;
+}
+
+.continue {
+  border: none;
+  background: #4193cb;
+  color: white;
+  padding: 10px 25px 10px 25px;
+  border-radius: 20px;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.continue:hover {
+  background: #60a0ca;
+}
+
+.test {
+  display: flex;
 }
