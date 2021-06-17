@@ -52,7 +52,7 @@ header {
   display: flex;
 }
 .course-container {
-  min-width: 40%;
+  min-width: 35%;
   background: white;
   border: solid 1px #cdcdcd;
   padding: 10px;
