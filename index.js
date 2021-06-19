@@ -181,8 +181,9 @@ function prevQuestion() {
   }
 }
 
-function submitAnswer() {
+function submitAnswer(e) {
   // showMessage.style.display = "block";
+  e.preventDefault();
   document.querySelector(".submit-quiz").disabled = true;
 
   if (document.getElementById("r3").checked) {
