@@ -7,6 +7,8 @@ for (var i = 0; i < componenet.length; i++) {
   componenet[i].addEventListener("click", slider);
 }
 
+document.getElementById("start").style.color = "#75BB43";
+
 // Get all the elements of class video and puth them in array
 var videos = document.getElementsByClassName("video");
 var video = Array.prototype.slice.call(videos);
