@@ -71,6 +71,33 @@ var hideMessage = document
   .querySelector(".hide")
   .addEventListener("click", hideMessage);
 
+question.innerHTML = questionFull.question;
+
+var answers = document.getElementsByClassName("container");
+var answer = Array.prototype.slice.call(answers);
+
+answer[0].innerHTML =
+  questionFull.choice1 +
+  "<input id = 'r1' class='input' value = 'false' type='radio' name='radio'><span class='checkmark'></span>";
+answer[1].innerHTML =
+  questionFull.choice2 +
+  "<input id = 'r2' class='input' value = 'false' type='radio' name='radio'><span class='checkmark'></span>";
+answer[2].innerHTML =
+  questionFull.choice3 +
+  "<input id = 'r3' class='input' value = 'Correct' type='radio' name='radio'><span class='checkmark'></span>";
+answer[3].innerHTML =
+  questionFull.choice4 +
+  "<input id = 'r4' class='input' value = 'false' type='radio' name='radio'><span class='checkmark'></span>";
+
+inputRadio = document.getElementsByClassName("input");
+var input = Array.prototype.slice.call(inputRadio);
+
+document.querySelector(".quiz-frame").style.pointerEvents = "";
+
+for (var i = 0; i < input.length; i++) {
+  input[i].addEventListener("click", openSubmit);
+}
+
 var info = document.getElementsByClassName("info");
 var inf = Array.prototype.slice.call(info);
 
@@ -106,6 +133,10 @@ var green = document
 var gray = document
   .querySelector(".gray")
   .addEventListener("click", fillShowAll);
+
+var continueAction = document
+  .querySelector(".continue")
+  .addEventListener("click", continueAction);
 
 function slider(index) {
   var parent = index.target.parentElement;
@@ -179,7 +210,6 @@ function fillQuiz(index) {
   for (var i = 0; i < infoTitle.length; i++) {
     infoTitle[i].style.color = "#444444";
   }
-
   index.target.style.color = "#75BB43";
 
   index.target.parentElement.children[1].style.display = "block";
@@ -193,33 +223,6 @@ function fillQuiz(index) {
   videoPath.style.display = "none";
   quizFrame.style.display = "";
   infoFrame.style.display = "none";
-
-  question.innerHTML = questionFull.question;
-
-  var answers = document.getElementsByClassName("container");
-  var answer = Array.prototype.slice.call(answers);
-
-  answer[0].innerHTML =
-    questionFull.choice1 +
-    "<input id = 'r1' class='input' value = 'false' type='radio' name='radio'><span class='checkmark'></span>";
-  answer[1].innerHTML =
-    questionFull.choice2 +
-    "<input id = 'r2' class='input' value = 'false' type='radio' name='radio'><span class='checkmark'></span>";
-  answer[2].innerHTML =
-    questionFull.choice3 +
-    "<input id = 'r3' class='input' value = 'Correct' type='radio' name='radio'><span class='checkmark'></span>";
-  answer[3].innerHTML =
-    questionFull.choice4 +
-    "<input id = 'r4' class='input' value = 'false' type='radio' name='radio'><span class='checkmark'></span>";
-
-  inputRadio = document.getElementsByClassName("input");
-  var input = Array.prototype.slice.call(inputRadio);
-
-  document.querySelector(".quiz-frame").style.pointerEvents = "";
-
-  for (var i = 0; i < input.length; i++) {
-    input[i].addEventListener("click", openSubmit);
-  }
 }
 
 function openSubmit() {
@@ -355,4 +358,48 @@ function fillShowAll() {
   document.getElementById("Group_495").style.display = "block";
   document.getElementById("Group_494").style.display = "block";
   document.getElementById("Group_492").style.display = "block";
+}
+
+function continueAction() {
+  var classes = document.getElementsByClassName("classes");
+  var classTitle = Array.prototype.slice.call(classes);
+  var color = "rgb(117, 187, 67)";
+  var classname = ";";
+  for (var i = 0; i < classTitle.length; i++) {
+    if (classTitle[i].style.color == color) {
+      classTitle[i + 1].style.color = "rgb(117, 187, 67)";
+      classTitle[i].style.color = "#444444";
+      if (classTitle[i + 1].className.includes("quiz")) {
+        quizFrame.style.display = "block";
+        videoPath.style.display = "none";
+        infoFrame.style.display = "none";
+        break;
+      } else if (classTitle[i + 1].className.includes("video")) {
+        quizFrame.style.display = "none";
+        videoPath.style.display = "block";
+        infoFrame.style.display = "none";
+        videoPath.src = videoSouce;
+
+        break;
+      } else if (classTitle[i + 1].className.includes("info")) {
+        quizFrame.style.display = "none";
+        videoPath.style.display = "none";
+        infoFrame.style.display = "block";
+        break;
+      }
+      // if (classTitle[j].className.includes("video")) {
+      //   quizFrame.style.display = "none";
+      //   videoPath.style.display = "";
+      //   infoFrame.style.display = "none";
+      //   videoPath.src = videoSouce;
+      //   console.log(classTitle[j].className);
+      //   break;
+      // }
+      // if (classTitle[j].className.includes("quiz")) {
+      //   console.log(classTitle[j].className);
+      // }
+
+      break;
+    }
+  }
 }
