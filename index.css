@@ -521,3 +521,12 @@ form button[disabled] {
 .test {
   display: flex;
 }
+
+@media all and (max-width: 850px) {
+  .main-container {
+    display: block;
+  }
+  .inside-classes {
+    width: auto;
+  }
+}
