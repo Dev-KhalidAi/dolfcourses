@@ -90,6 +90,23 @@ var scrollToggle = false;
 videoPath.style.display = "";
 videoPath.src = videoSouce;
 
+var red = document.querySelector(".red").addEventListener("click", fillGas);
+var orange = document
+  .querySelector(".orange")
+  .addEventListener("click", fillSteam);
+var blue = document
+  .querySelector(".blue")
+  .addEventListener("click", fillDiesel);
+var lightblue = document
+  .querySelector(".lightblue")
+  .addEventListener("click", fillComb);
+var green = document
+  .querySelector(".green")
+  .addEventListener("click", fillDGas);
+var gray = document
+  .querySelector(".gray")
+  .addEventListener("click", fillShowAll);
+
 function slider(index) {
   var parent = index.target.parentElement;
   var child = parent.children[1];
@@ -103,6 +120,28 @@ function slider(index) {
 }
 
 function fillVideo(index) {
+  var quizTitles = document.getElementsByClassName("quiz");
+  var quizTitle = Array.prototype.slice.call(quizTitles);
+
+  for (var i = 0; i < quizTitle.length; i++) {
+    quizTitle[i].style.color = "#444444";
+  }
+  var videoTitles = document.getElementsByClassName("video");
+  var videoTitle = Array.prototype.slice.call(videoTitles);
+
+  for (var i = 0; i < videoTitle.length; i++) {
+    videoTitle[i].style.color = "#444444";
+  }
+
+  var infoTitles = document.getElementsByClassName("info");
+  var infoTitle = Array.prototype.slice.call(infoTitles);
+
+  for (var i = 0; i < infoTitle.length; i++) {
+    infoTitle[i].style.color = "#444444";
+  }
+
+  index.target.style.color = "#75BB43";
+
   index.target.parentElement.children[1].style.display = "block";
   index.target.parentElement.children[0].style.display = "none";
 
@@ -121,6 +160,28 @@ function fillVideo(index) {
 }
 
 function fillQuiz(index) {
+  var quizTitles = document.getElementsByClassName("quiz");
+  var quizTitle = Array.prototype.slice.call(quizTitles);
+
+  for (var i = 0; i < quizTitle.length; i++) {
+    quizTitle[i].style.color = "#444444";
+  }
+  var videoTitles = document.getElementsByClassName("video");
+  var videoTitle = Array.prototype.slice.call(videoTitles);
+
+  for (var i = 0; i < videoTitle.length; i++) {
+    videoTitle[i].style.color = "#444444";
+  }
+
+  var infoTitles = document.getElementsByClassName("info");
+  var infoTitle = Array.prototype.slice.call(infoTitles);
+
+  for (var i = 0; i < infoTitle.length; i++) {
+    infoTitle[i].style.color = "#444444";
+  }
+
+  index.target.style.color = "#75BB43";
+
   index.target.parentElement.children[1].style.display = "block";
   index.target.parentElement.children[0].style.display = "none";
 
@@ -204,6 +265,28 @@ function hideMessage() {
 }
 
 function fillInfo(index) {
+  var quizTitles = document.getElementsByClassName("quiz");
+  var quizTitle = Array.prototype.slice.call(quizTitles);
+
+  for (var i = 0; i < quizTitle.length; i++) {
+    quizTitle[i].style.color = "#444444";
+  }
+  var videoTitles = document.getElementsByClassName("video");
+  var videoTitle = Array.prototype.slice.call(videoTitles);
+
+  for (var i = 0; i < videoTitle.length; i++) {
+    videoTitle[i].style.color = "#444444";
+  }
+
+  var infoTitles = document.getElementsByClassName("info");
+  var infoTitle = Array.prototype.slice.call(infoTitles);
+
+  for (var i = 0; i < infoTitle.length; i++) {
+    infoTitle[i].style.color = "#444444";
+  }
+
+  index.target.style.color = "#75BB43";
+
   index.target.parentElement.children[1].style.display = "block";
   index.target.parentElement.children[0].style.display = "none";
   const loading = () => {
@@ -229,4 +312,47 @@ function addScroll() {
       "<i class='fas fa-unlock-alt'></i>";
     scrollToggle = false;
   }
+}
+
+function fillGas() {
+  document.getElementById("Group_494").style.display = "block";
+  document.getElementById("Group_495").style.display = "none";
+  document.getElementById("Group_491").style.display = "none";
+  document.getElementById("Group_492").style.display = "none";
+  document.getElementById("Group_493").style.display = "none";
+}
+function fillDiesel() {
+  document.getElementById("Group_492").style.display = "block";
+  document.getElementById("Group_494").style.display = "none";
+  document.getElementById("Group_495").style.display = "none";
+  document.getElementById("Group_491").style.display = "none";
+  document.getElementById("Group_493").style.display = "none";
+}
+function fillComb() {
+  document.getElementById("Group_495").style.display = "block";
+  document.getElementById("Group_494").style.display = "none";
+  document.getElementById("Group_491").style.display = "none";
+  document.getElementById("Group_492").style.display = "none";
+  document.getElementById("Group_493").style.display = "none";
+}
+function fillSteam() {
+  document.getElementById("Group_491").style.display = "block";
+  document.getElementById("Group_495").style.display = "none";
+  document.getElementById("Group_494").style.display = "none";
+  document.getElementById("Group_492").style.display = "none";
+  document.getElementById("Group_493").style.display = "none";
+}
+function fillDGas() {
+  document.getElementById("Group_493").style.display = "block";
+  document.getElementById("Group_491").style.display = "none";
+  document.getElementById("Group_495").style.display = "none";
+  document.getElementById("Group_494").style.display = "none";
+  document.getElementById("Group_492").style.display = "none";
+}
+function fillShowAll() {
+  document.getElementById("Group_493").style.display = "block";
+  document.getElementById("Group_491").style.display = "block";
+  document.getElementById("Group_495").style.display = "block";
+  document.getElementById("Group_494").style.display = "block";
+  document.getElementById("Group_492").style.display = "block";
 }

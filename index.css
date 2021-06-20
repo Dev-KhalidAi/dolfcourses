@@ -401,11 +401,11 @@ form button[disabled] {
   color: white;
 }
 .lightblue:hover {
-  background: lightskyblue;
+  background: #41aebc;
   color: white;
 }
 .green:hover {
-  background: green;
+  background: #9ccb3c;
   color: white;
 }
 .gray:hover {
@@ -429,12 +429,12 @@ form button[disabled] {
 }
 
 #lightblue {
-  color: lightskyblue;
+  color: #41aebc;
   font-size: 25px;
 }
 
 #green {
-  color: green;
+  color: #9ccb3c;
   font-size: 25px;
 }
 
