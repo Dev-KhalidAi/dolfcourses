@@ -177,8 +177,9 @@ hr {
   position: relative;
   display: block;
   text-align: center;
-  top: 40%;
-  left: 35%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 300px;
   padding: 40px;
   border-radius: 15px;
@@ -520,6 +521,10 @@ form button[disabled] {
 
 .test {
   display: flex;
+}
+
+#Layer_1 {
+  width: 100%;
 }
 
 @media all and (max-width: 850px) {
