@@ -36,7 +36,7 @@ header {
   margin-left: auto;
 }
 .logo img {
-  width: 187px;
+  width: 150px;
 }
 
 .seprator {
@@ -391,59 +391,106 @@ form button[disabled] {
 
 .orange:hover {
   background: orange;
+}
+
+.orange:hover > label {
+  background: orange;
   color: white;
 }
+.orange:hover > i {
+  background: orange;
+  color: white;
+}
+
 .red:hover {
+  background: red;
+}
+.red:hover > label {
+  background: red;
+  color: white;
+}
+.red:hover > i {
   background: red;
   color: white;
 }
 .blue:hover {
   background: blue;
+}
+.blue:hover > label {
+  background: blue;
+  color: white;
+}
+.blue:hover > i {
+  background: blue;
   color: white;
 }
 .lightblue:hover {
+  background: #41aebc;
+}
+.lightblue:hover > label {
+  background: #41aebc;
+  color: white;
+}
+.lightblue:hover > i {
   background: #41aebc;
   color: white;
 }
 .green:hover {
   background: #9ccb3c;
+}
+.green:hover > label {
+  background: #9ccb3c;
+  color: white;
+}
+.green:hover > i {
+  background: #9ccb3c;
   color: white;
 }
 .gray:hover {
   background: grey;
+}
+.gray:hover > label {
+  background: grey;
+  color: white;
+}
+.gray:hover > i {
+  background: grey;
   color: white;
 }
 
-#orange {
+.orange i {
   color: orange;
   font-size: 25px;
 }
 
-#red {
+.red i {
   color: red;
   font-size: 25px;
 }
 
-#blue {
+.blue i {
   color: blue;
   font-size: 25px;
 }
 
-#lightblue {
+.lightblue i {
   color: #41aebc;
   font-size: 25px;
 }
 
-#green {
+.green i {
   color: #9ccb3c;
   font-size: 25px;
 }
 
-#gray {
+.gray i {
   color: gray;
   font-size: 25px;
 }
 
+.p:hover {
+  color: white;
+}
 #map {
   margin-top: 50px;
   width: 500px;
@@ -533,5 +580,8 @@ form button[disabled] {
   }
   .inside-classes {
     width: auto;
+  }
+  .lock-icon {
+    display: none;
   }
 }
