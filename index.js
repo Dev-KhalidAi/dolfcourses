@@ -1,7 +1,8 @@
 // Get all the elements of class componenet and puth them in array
 componenets = document.getElementsByClassName("componenet");
 var componenet = Array.prototype.slice.call(componenets);
-
+document.getElementById("left").disabled = true;
+document.getElementById("left").style.color = "#CCC";
 // Add to each component event listenner
 for (var i = 0; i < componenet.length; i++) {
   componenet[i].addEventListener("click", slider);
@@ -257,6 +258,10 @@ function openSubmit() {
 }
 
 function nextQuestion() {
+  document.getElementById("left").disabled = false;
+  document.getElementById("left").style.color = "white";
+  document.getElementById("left").style.color = null;
+
   if (currnetQuestion < numQuestion) {
     currnetQuestion++;
     document.querySelector(".questions").innerHTML =
@@ -275,15 +280,28 @@ function nextQuestion() {
     answer[3].innerHTML =
       questionFull[1].choice4 +
       "<input id = 'r4' class='input' value = 'false' type='radio' name='radio'><span class='checkmark'></span>";
+
     var checkmarks = document.getElementsByClassName("checkmark");
     var checkmark = Array.prototype.slice.call(checkmarks);
     for (var i = 0; i < checkmark.length; i++) {
       checkmark[i].addEventListener("click", openSubmit);
     }
+
+    if (currnetQuestion == numQuestion) {
+      document.getElementById("right").disabled = true;
+      document.getElementById("right").style.color = "#cccccc";
+    } else {
+      document.getElementById("right").disabled = false;
+      document.getElementById("right").style.color = "white";
+      document.getElementById("right").style.color = null;
+    }
   }
 }
 
 function prevQuestion() {
+  document.getElementById("right").disabled = false;
+  document.getElementById("right").style.color = "white";
+  document.getElementById("right").style.color = null;
   if (currnetQuestion > 1) {
     currnetQuestion--;
     document.querySelector(".questions").innerHTML =
@@ -308,6 +326,15 @@ function prevQuestion() {
     var checkmark = Array.prototype.slice.call(checkmarks);
     for (var i = 0; i < checkmark.length; i++) {
       checkmark[i].addEventListener("click", openSubmit);
+    }
+
+    if (currnetQuestion == 1) {
+      document.getElementById("left").disabled = true;
+      document.getElementById("left").style.color = "#cccccc";
+    } else {
+      document.getElementById("left").disabled = false;
+      document.getElementById("left").style.color = "white";
+      document.getElementById("left").style.color = null;
     }
   }
 }
@@ -518,18 +545,6 @@ function continueAction() {
         setTimeout(loading, 200);
         break;
       }
-      // if (classTitle[j].className.includes("video")) {
-      //   quizFrame.style.display = "none";
-      //   videoPath.style.display = "";
-      //   infoFrame.style.display = "none";
-      //   videoPath.src = videoSouce;
-      //   console.log(classTitle[j].className);
-      //   break;
-      // }
-      // if (classTitle[j].className.includes("quiz")) {
-      //   console.log(classTitle[j].className);
-      // }
-
       break;
     }
   }
