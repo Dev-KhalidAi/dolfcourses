@@ -246,10 +246,10 @@ function fillQuiz(index) {
     questionFull[0].choice4 +
     "<input id = 'r4' class='input' value = 'false' type='radio' name='radio'><span class='checkmark'></span>";
 
-  var checkmarks = document.getElementsByClassName("checkmark");
-  var checkmark = Array.prototype.slice.call(checkmarks);
-  for (var i = 0; i < checkmark.length; i++) {
-    checkmark[i].addEventListener("click", openSubmit);
+  var containers = document.getElementsByClassName("container");
+  var container = Array.prototype.slice.call(containers);
+  for (var i = 0; i < container.length; i++) {
+    container[i].addEventListener("click", openSubmit);
   }
 }
 
