@@ -304,7 +304,7 @@ function nextQuestion() {
       questionFull[1].choice4 +
       "<input id = 'r4' class='input' value = 'false' type='radio' name='radio'><span class='checkmark'></span>";
 
-    var checkmarks = document.getElementsByClassName("checkmark");
+    var checkmarks = document.getElementsByClassName("container");
     var checkmark = Array.prototype.slice.call(checkmarks);
     for (var i = 0; i < checkmark.length; i++) {
       checkmark[i].addEventListener("click", openSubmit);
@@ -386,7 +386,7 @@ function submitAnswer(e) {
     document.querySelector(".respond").style.display = "none";
     document.querySelector(".submit-quiz").disabled = true;
 
-    var checkmarks = document.getElementsByClassName("checkmark");
+    var checkmarks = document.getElementsByClassName("container");
     var checkmark = Array.prototype.slice.call(checkmarks);
     for (var i = 0; i < checkmark.length; i++) {
       checkmark[i].disabled = true;
@@ -526,7 +526,7 @@ function continueAction() {
           questionFull[0].choice4 +
           "<input id = 'r4' class='input' value = 'false' type='radio' name='radio'><span class='checkmark'></span>";
 
-        var checkmarks = document.getElementsByClassName("checkmark");
+        var checkmarks = document.getElementsByClassName("container");
         var checkmark = Array.prototype.slice.call(checkmarks);
         const loading = () => {
           classTitle[i + 1].parentElement.children[0].style.display = "block";
