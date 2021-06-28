@@ -10,7 +10,7 @@ for (var i = 0; i < componenet.length; i++) {
 
 document.getElementById("start").style.color = "#75BB43";
 
-// Get all the elements of class video and puth them in array
+// Get all the elements of class video and put them in array
 var videos = document.getElementsByClassName("video");
 var video = Array.prototype.slice.call(videos);
 
@@ -39,11 +39,15 @@ quizFrame.style.display = "none";
 // Flag to detect whether the component is close or open
 var bool = false;
 
+// Set the maximum number of quiz questions
 var numQuestion = 2;
+
+// Current quiz question
 var currnetQuestion = 1;
 document.querySelector(".questions").innerHTML =
   " Question " + currnetQuestion + " / " + numQuestion;
 
+// Navigate throgh the quiz questions
 var rightButton = document
   .getElementById("right")
   .addEventListener("click", nextQuestion);
@@ -52,8 +56,10 @@ var leftButton = document
   .getElementById("left")
   .addEventListener("click", prevQuestion);
 
+// Quiz form area
 var quizForm = document.getElementById("quiz-form");
 
+// Array of object for the questions and the answers of quiz
 var questionFull = [
   {
     question:
@@ -81,22 +87,28 @@ var questionFull = [
 ];
 
 var question = document.querySelector(".question");
+// Submit button of quiz
 var submitButton = document
   .querySelector(".submit-quiz")
   .addEventListener("click", submitAnswer);
 
+// To close the message after answering specific question
 var hideMessage = document
   .querySelector(".hide")
   .addEventListener("click", hideMessage);
 
+// Get the answers positions
 var answers = document.getElementsByClassName("container");
 var answer = Array.prototype.slice.call(answers);
 
+// Get the radio buttons positions
 inputRadio = document.getElementsByClassName("input");
 var input = Array.prototype.slice.call(inputRadio);
 
+// Set the pointer events to none
 document.querySelector(".quiz-frame").style.pointerEvents = "";
 
+// Get all the info list from course menu
 var info = document.getElementsByClassName("info");
 var inf = Array.prototype.slice.call(info);
 
@@ -105,17 +117,23 @@ for (var i = 0; i < inf.length; i++) {
   inf[i].addEventListener("click", fillInfo);
 }
 
+// Select the info area
 var infoFrame = document.querySelector(".info-container");
 
+// Set event listener to lock icon to toggle scroll on or off.
 var lockIcon = document
   .querySelector(".lock-icon")
   .addEventListener("click", addScroll);
 
+// flag to detect whether the icon locked or unlocked
 var scrollToggle = false;
 
 videoPath.style.display = "";
+
+// Set the video source
 videoPath.src = videoSouce;
 
+// Fill the pointers on the Saudi Arabia map
 var red = document.querySelector(".red").addEventListener("click", fillGas);
 var orange = document
   .querySelector(".orange")
@@ -137,6 +155,7 @@ var continueAction = document
   .querySelector(".continue")
   .addEventListener("click", continueAction);
 
+// Function to close the main nav
 function slider(index) {
   var parent = index.target.parentElement;
   var child = parent.children[1];
@@ -149,6 +168,7 @@ function slider(index) {
   }
 }
 
+// Function to fill the video of specific lesson
 function fillVideo(index) {
   var quizTitles = document.getElementsByClassName("quiz");
   var quizTitle = Array.prototype.slice.call(quizTitles);
@@ -193,6 +213,7 @@ function fillVideo(index) {
   });
 }
 
+// Function to fill the quiz of specific lesson
 function fillQuiz(index) {
   document.querySelector(".quiz-frame").style.pointerEvents = "";
 
@@ -253,10 +274,12 @@ function fillQuiz(index) {
   }
 }
 
+// Function to open the submit button after choosing input radio of quiz
 function openSubmit() {
   document.getElementById("submit-button").disabled = false;
 }
 
+// To navigate to next question of quiz
 function nextQuestion() {
   document.getElementById("left").disabled = false;
   document.getElementById("left").style.color = "white";
@@ -298,6 +321,7 @@ function nextQuestion() {
   }
 }
 
+// To navigate to previous question of quiz
 function prevQuestion() {
   document.getElementById("right").disabled = false;
   document.getElementById("right").style.color = "white";
@@ -339,6 +363,7 @@ function prevQuestion() {
   }
 }
 
+// Submitting the answer of quiz and validate the answer
 function submitAnswer(e) {
   // showMessage.style.display = "block";
   e.preventDefault();
@@ -369,6 +394,7 @@ function submitAnswer(e) {
   }
 }
 
+// Hide the respond of message
 function hideMessage() {
   document.querySelector(".overlay").style.display = "none";
 }
@@ -410,6 +436,7 @@ function fillInfo(index) {
   infoFrame.style.display = "block";
 }
 
+// Add scroll when click lock icon
 function addScroll() {
   if (scrollToggle == false) {
     document.querySelector(".course-container").style.height = "400px";
@@ -425,6 +452,7 @@ function addScroll() {
   }
 }
 
+// Functions to fill the pointers in the map of saudi arbia
 function fillGas() {
   document.getElementById("Group_494").style.display = "block";
   document.getElementById("Group_495").style.display = "none";
@@ -468,6 +496,7 @@ function fillShowAll() {
   document.getElementById("Group_492").style.display = "block";
 }
 
+// When continue button clicked
 function continueAction() {
   var classes = document.getElementsByClassName("classes");
   var classTitle = Array.prototype.slice.call(classes);
