@@ -215,6 +215,8 @@ function fillVideo(index) {
 
 // Function to fill the quiz of specific lesson
 function fillQuiz(index) {
+  document.querySelector(".noevent").style.pointerEvents = "";
+
   document.querySelector(".quiz-frame").style.pointerEvents = "";
 
   var quizTitles = document.getElementsByClassName("quiz");
@@ -281,6 +283,7 @@ function openSubmit() {
 
 // To navigate to next question of quiz
 function nextQuestion() {
+  document.querySelector(".noevent").style.pointerEvents = "";
   document.getElementById("left").disabled = false;
   document.getElementById("left").style.color = "white";
   document.getElementById("left").style.color = null;
@@ -323,6 +326,7 @@ function nextQuestion() {
 
 // To navigate to previous question of quiz
 function prevQuestion() {
+  document.querySelector(".noevent").style.pointerEvents = "";
   document.getElementById("right").disabled = false;
   document.getElementById("right").style.color = "white";
   document.getElementById("right").style.color = null;
@@ -374,24 +378,20 @@ function submitAnswer(e) {
     document.querySelector(".respond").style.display = "block";
     document.querySelector(".respond2").style.display = "none";
     document.querySelector(".submit-quiz").disabled = true;
-
-    var checkmarks = document.getElementsByClassName("checkmark");
-    var checkmark = Array.prototype.slice.call(checkmarks);
-    for (var i = 0; i < checkmark.length; i++) {
-      checkmark[i].disabled = true;
-    }
   } else {
     document.querySelector(".overlay").style.display = "block";
     document.querySelector(".respond2").style.display = "block";
     document.querySelector(".respond").style.display = "none";
     document.querySelector(".submit-quiz").disabled = true;
-
-    var checkmarks = document.getElementsByClassName("container");
-    var checkmark = Array.prototype.slice.call(checkmarks);
-    for (var i = 0; i < checkmark.length; i++) {
-      checkmark[i].disabled = true;
-    }
   }
+  var checkmarks = document.getElementsByClassName("checkmark");
+  var checkmark = Array.prototype.slice.call(checkmarks);
+
+  for (var i = 0; i < checkmark.length; i++) {
+    checkmark[i].style.setProperty("background", "#A3A3A3");
+  }
+
+  document.querySelector(".noevent").style.pointerEvents = "none";
 }
 
 // Hide the respond of message
@@ -506,6 +506,8 @@ function continueAction() {
       classTitle[i + 1].style.color = "rgb(117, 187, 67)";
       classTitle[i].style.color = "#444444";
       if (classTitle[i + 1].className.includes("quiz")) {
+        document.querySelector(".noevent").style.pointerEvents = "";
+
         quizFrame.style.display = "block";
         videoPath.style.display = "none";
         infoFrame.style.display = "none";
